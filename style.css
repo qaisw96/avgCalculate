@@ -1,3 +1,98 @@
-#plusForm {
-    margin-left: 1cm;
+
+
+
+body  {
+    margin: 50px;
+    direction: rtl;
+  }
+
+ #table {
+   margin-top: 1cm;
+ }
+.table, th, td {
+    border: 1px solid black;
+
+    width: 10%;
+    font-size: large;
+
+  }
+
+  th {
+      height: 30px;
+      background-color: antiquewhite;
+  }
+
+  td {
+    text-align: center;
+
+  }
+tr:hover {
+    background-color:#f5f5f5;
+}
+
+form {
+    margin-top: 2cm;
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
+    width: 50%;
+    font-size: x-large;
+  
+    
+}
+
+
+
+#view {
+  padding-left: 15px;
+  margin-right: 20px;
+ 
+}
+
+input[type=number], select {
+  width: 35%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-size: large;
+}
+
+
+input[type=submit] {
+  width: 35%;
+  background-color: #4CAF50;
+  color: white;
+  padding: 12px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: x-large;
+}
+
+
+.second {
+  margin-right: 5px;
+}
+
+.third {
+  margin-right: 80px;
+}
+
+#sub {
+  width: 18%;
+  margin-right: 15px;
+  margin-top: 20px;
+}
+
+#avgPara {
+  position: absolute;
+  background-color: coral;
+  left: 10cm;
+  bottom: .7cm;
+  padding: 40px;
+  font-size: 7em;
 }

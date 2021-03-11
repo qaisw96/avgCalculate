@@ -11,16 +11,17 @@ table.appendChild(tableHeader)
 
 const th1 = document.createElement("th")
 tableHeader.appendChild(th1)
-th1.textContent = "Marks"
+th1.textContent = "العلامة"
 
 const th2 = document.createElement("th")
 tableHeader.appendChild(th2)
-th2.textContent = "Max"
+th2.textContent = "من"
 
 function Grade(mark, max) {
     this.mark = mark
     this.max = max 
     this.total = 0
+    this.tot = 0
 
     Grade.all.push(this)
 }
@@ -30,8 +31,7 @@ console.log(Grade.all)
 
 
 
-const form = document.createElement("form")
-document.body.appendChild(form)
+const form = document.getElementById("form")
 
 
 /* const form = document.createElement("form")
@@ -39,22 +39,29 @@ document.body.appendChild(form)
  */
 const label1 = document.createElement("label") 
 label1.setAttribute("for","mark")
+label1.setAttribute("class","first")
 form.appendChild(label1)
-label1.textContent = "Your Mark"
+label1.textContent = "العلامة "
 
 const input1 = document.createElement("input")
 input1.setAttribute("id","mark")
+input1.setAttribute("class","second")
 input1.setAttribute("type","number")
 label1.appendChild(input1)
 
 const label2 = document.createElement("label")
 label2.setAttribute("for","maxMark")
+label2.setAttribute("class","third")
+label2.setAttribute("id","maxMark")
 form.appendChild(label2)
-label2.textContent = "Max Mark"
+label2.textContent = "من "
 
 const select = document.createElement("select")
 select.setAttribute("id","maxMark")
+select.setAttribute("class","four")
 select.setAttribute("name","maxMark")
+select.setAttribute("type","number")
+
 form.appendChild(select)
 
 let options = ["100", "200", "300"]
@@ -107,26 +114,20 @@ Grade.prototype.render = function() {
         const td2 = document.createElement("td")
         rawEl.appendChild(td2)
         td2.textContent = Grade.all[i].max
+        this.tot+=Grade.all[i].max
+
+
 
     }
 
 }
 
 
-function handle(event) {
-    event.preventDefault();
 
-    const mark = document.getElementById("mark").value;
-    const max = document.getElementById("maxMark").value;
-    console.log(max)
-
-    let newGrade = new Grade(mark, max)
-    newGrade.render()
-
-}
 
 const view = document.createElement("input")
 view.setAttribute("id","view")
+view.setAttribute("value","أدخل")
 view.setAttribute("type","submit")
 form.appendChild(view)
 
@@ -135,15 +136,38 @@ form.appendChild(view)
 form.addEventListener("submit", function(event) {
     event.preventDefault();
 
-    const mark = JSON.parse(document.getElementById("mark").value) 
-    const max = document.getElementById("maxMark").value;
+    
+    const mark = parseFloat(event.target.mark.value) 
+    const max = parseFloat(event.target.maxMark.value);
     console.log(max)
     console.log(mark)
     
     let newGrade = new Grade(mark, max)
     newGrade.render()
+    form.reset()
 
 })
 
 
+/* 
+const viewAvg = document.createElement("input")
+viewAvg.setAttribute("id","viewviewAvg")
+viewAvg.setAttribute("type","submit")
+viewAvg.setAttribute("name","view")
+document.body.appendChild(viewAvg)
+ */
+
+/* addEventListener("submit", function(){
+    alert("helo")
+})
+ */
+
+function results() {
+    const para = document.getElementById("avgPara")
+    document.body.appendChild(para)
+    avgStudent = JSON.stringify((Grade.all[Grade.all.length - 1].total) / (Grade.all[Grade.all.length - 1].tot / 100))
+    para.textContent = avgStudent.substring(0,5)
+    console.log(Grade.all)
+
+} 
 

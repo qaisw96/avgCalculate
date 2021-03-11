@@ -6,32 +6,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="./style.css">
+
 </head>
 <body>
-    <h1>Calculate your average</h1>
-    <section class="container">
-<!--         <form action="" id="form">
-            <label for="mark">Your Mark</label>
-            <input type="number" id="mark" >
 
-            <label for="maxMark">Max Mark</label>
-            <select name="maxMark" id="maxMark">
-                <option value="100">100</option>
-                <option value="200">200</option>
-                <option value="300">300</option>
-            </select>
+    <h1>احسب معدلك</h1>
 
-            <input type="submit" id="submit">
-            
-            <button id="plusForm" onclick="addForm(event)" >PLUS</button>
+    <section class="formcontainer">
+        <form action="" id="form">
+
         </form>
- -->    </section>
+
+    </section>
+
+    <section class="tablecontainer">
         <table id="table">
 
         </table>
+        <input type="submit" id="sub" onclick="results()" value="احسب">  
 
-<!--         <input type="submit" id="sub">        
- -->        <p id="avgPara"></p>
+    
+    </section>
+
+
+
+
+    <p id="avgPara"></p>
+      
  <script src="./app.js"></script>
     
 </body>
