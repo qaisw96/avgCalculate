@@ -103,6 +103,7 @@ Grade.prototype.render = function() {
  */     if(i>0) {
              table.removeChild(table.lastElementChild)
          }
+        
         const rawEl = document.createElement("tr")
         table.appendChild(rawEl)
     
@@ -141,6 +142,7 @@ form.addEventListener("submit", function(event) {
     const max = parseFloat(event.target.maxMark.value);
     console.log(max)
     console.log(mark)
+    
     
     let newGrade = new Grade(mark, max)
     newGrade.render()
