@@ -89,10 +89,6 @@ input[type=submit] {
 }
 
 #avgPara {
-  position: absolute;
-  background-color: coral;
-  left: 10cm;
-  bottom: .7cm;
-  padding: 40px;
+  padding: 27px;
   font-size: 7em;
 }
