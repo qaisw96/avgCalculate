@@ -1,4 +1,3 @@
-
 /* const section = document.getElementById('container')
 const form = document.getElementById('form')
 const submitForm = document.getElementById('submit') 
@@ -143,10 +142,12 @@ form.addEventListener("submit", function(event) {
     console.log(max)
     console.log(mark)
     
-    
-    let newGrade = new Grade(mark, max)
-    newGrade.render()
-    form.reset()
+    if(mark.toString() !== "NaN") {
+
+        let newGrade = new Grade(mark, max)
+        newGrade.render()
+        form.reset()
+    }
 
 })
 
